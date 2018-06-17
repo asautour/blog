@@ -4,7 +4,7 @@ import Navigation from './components/Navigation';
 import './App.css';
 
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div >
@@ -14,5 +14,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
