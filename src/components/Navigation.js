@@ -1,6 +1,10 @@
 import React from 'react';
 import NavDropdown from './NavDropdown';
 
+const TITLE = 'RegEngine';
+const MENU_REG_ANALYSIS = 'RegAnalysis';
+const MENU_REG_SEARCH = 'RegSearch';
+
 const NavItem = (props) => {
   const pageURI = window.location.pathname + window.location.search;
   const liClassName = (props.path === pageURI) ? 'nav-item active' : 'nav-item';
@@ -15,11 +19,11 @@ const NavItem = (props) => {
   );
 };
 
-class Navigation extends React.Component {
+export default class Navigation extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="/">Navbar</a>
+        <a className="navbar-brand" href="/">{TITLE}</a>
         <button
           className="navbar-toggler"
           type="button"
@@ -34,9 +38,8 @@ class Navigation extends React.Component {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
-
-            <NavItem path="/" name="Home" />
-            <NavItem path="/page2" name="Page2" />
+            <NavItem path="/" name={MENU_REG_ANALYSIS} />
+            <NavItem path="/page2" name={MENU_REG_SEARCH} />
             <NavItem path="/page3" name="Disabled" disabled="true" />
             <NavDropdown name="Dropdown" >
               <a className="dropdown-item" href="/">Action</a>
@@ -54,5 +57,3 @@ class Navigation extends React.Component {
     );
   }
 }
-
-export default Navigation;

@@ -9,7 +9,7 @@ export default class App extends Component {
     return (
       <div >
         <Navigation />
-        <h1 className="container">Hello</h1>
+        <h1 className="App">Main content should go here</h1>
       </div>
     );
   }
